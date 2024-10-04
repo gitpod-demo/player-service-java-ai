@@ -1,25 +1,2 @@
-// OpenAI Conversation
-curl --location 'http://localhost:8080/v1/chat/conversation' \
---header 'Content-Type: application/json' \
---data '{
-    "prompt": "Write a haiku about recursion in programming."
-}'
-
-// OpenAI chat
-curl --location 'http://localhost:8080/v1/chat' \
---header 'Content-Type: application/json' \
---data '{
-    "prompt": "Write a haiku about recursion in programming."
-}'
-
-// Ollama list models
-curl --location 'http://localhost:8080/v1/chat/ollama/list-models'
-
-
-// Ollama chat
-curl --location 'http://localhost:8080/v1/chat/ollama/chat' \
---header 'Content-Type: application/json' \
---data '{
-  "model": "tinyllama",
-  "prompt": "Why is the sky blue?"
-}'
+// Generate team
+curl -H "Content-type: application/json" -d '{"seedId":"abbotji01","teamSize":10}' http://127.0.0.1:8080/v1/model/generate

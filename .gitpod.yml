@@ -5,6 +5,11 @@ image:
 tasks:
   - name: player-service-app
     init: mvn package -DskipTests
+  - name: player-service-model
+    before: |
+      cd player-service-model
+      docker build -t a4a_model .
+    init: docker run -d -p 5000:5000 a4a_model
 
 ports:
   - port: 8080  # Port for player-service-app
