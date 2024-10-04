@@ -1,0 +1,20 @@
+
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: player-service-app
+    init: mvn package -DskipTests
+
+ports:
+  - port: 8080  # Port for player-service-app
+    onOpen: open-preview
+  - port: 5000  # Port for player-service-model
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-test
+    - pivotal.vscode-spring-boot
